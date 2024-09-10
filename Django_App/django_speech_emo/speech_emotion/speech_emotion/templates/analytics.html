@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔊EchoEmotion</title>
+    <script src="{% static "js/script.js" %}" defer></script>
+    <link rel='stylesheet' href="{% static "css/style.css" %}">
+</head>
+<body>
+    <div class="emo-container">
+        <div class="video-container">
+            <video id="emo-video" width="840" height="580" controls>
+                <source src="media/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="emotion-container">
+            <div class="emotion-label">
+                <label class="emotion-label-text">𝘼𝙣𝙜𝙧𝙮</label>
+                <div class="emotion-animation" id="angry">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>  
+            </div>
+            <div class="emotion-label">
+                <label class="emotion-label-text">𝘿𝙞𝙨𝙜𝙪𝙨𝙩</label>
+                <div class="emotion-animation" id="disgust">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="emotion-label">
+                <label class="emotion-label-text">𝙁𝙚𝙖𝙧</label>
+                <div class="emotion-animation" id="fear">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="emotion-label">
+                <label class="emotion-label-text">𝙃𝙖𝙥𝙥𝙮</label>
+                <div class="emotion-animation" id="happy">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="emotion-label">
+                <label class="emotion-label-text">𝙉𝙚𝙪𝙩𝙧𝙖𝙡</label>
+                <div class="emotion-animation" id="neutral">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="emotion-label">
+                <label class="emotion-label-text">𝙎𝙖𝙙</label>
+                <div class="emotion-animation" id="sad">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="emotion-label">
+                <label class="emotion-label-text">𝙎𝙪𝙧𝙥𝙧𝙞𝙨𝙚</label>
+                <div class="emotion-animation" id="surprise">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Inject emotion data into the script
+        const emotionData = {{ emotion_data|safe }};
+    </script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

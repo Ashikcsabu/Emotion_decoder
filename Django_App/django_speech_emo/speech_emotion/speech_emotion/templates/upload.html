@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="{% static "css/style.css" %}">
+    <title>🔊EchoEmotion</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <video autoplay loop muted plays-inline class="background-clip">
+            <source src="media/bg_video.mp4" type="video/mp4">
+        </video>
+
+        <div class="content">
+            <h1>𝙳𝚎𝚌𝚘𝚍𝚎 𝙴𝚖𝚘𝚝𝚒𝚘𝚗𝚜 !</h1>
+            <form id="uploadForm" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="video" id="file" accept="video/*" required>
+                <label for="file" id="fileLabel">Ʉ₱ⱠØ₳Đ</label>
+                <button type="submit">ĐɆ₵ØĐɆ</button>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
